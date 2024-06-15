@@ -1,0 +1,11 @@
+# version: "3.9"
+services:
+  cra-docker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # command: ./startup-script.sh
+    ports:
+      - 7777:3000 # exposed docker port are the same
+      # - 9229:9229 # this is the debug port
+    restart: unless-stopped
